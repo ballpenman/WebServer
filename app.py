@@ -16,17 +16,9 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-name = ""
-# score = 4
-
 @app.route('/',methods=['GET'])
 def index():
-    if(name!= ""):
-        user = User(name=name,score=score)
-        db.session.add(user)
-        db.session.commit()
     user_list = User.query.order_by(User.score.desc())
-    print("b")
     return render_template('index.html',user_list=user_list)
 
 @app.route('/',methods=['POST'])
