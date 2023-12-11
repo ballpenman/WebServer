@@ -31,4 +31,4 @@ def post():
     return '처리 완료'
 
 if __name__ == '__main__':
-    app.run(host='34.207.209.247', port=5000, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
